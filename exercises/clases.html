@@ -29,7 +29,8 @@ Cuando se denota un script de tipo module con el atributo type="module las varia
 
 Los closures nos sirven para tener algo parecido a variables privadas, característica que no tiene JavaScript por default. Es decir encapsulan variables que no pueden ser modificadas directamente por otros objetos, sólo por funciones pertenecientes al mismo. -->
 
-No se puede asignar un valor a this directamente y este depende de en que scope nos encontramos:
+No se puede asignar un valor a this directamente y este depende de en que scope
+nos encontramos:
 <!-- Clase 8
 
 this se refiere a un objeto, ese objeto es el que actualmente está ejecutando un pedazo de código.
@@ -38,8 +39,8 @@ this
 
 Cuando llamamos a this en el Global Scope o Function Scope, se hace referencia al objeto window. A excepción de cuando estamos en strict mode que nos regresará undefined.
 Cuando llamamos a this desde una “clase”, se hace referencia a la instancia generada por el constructor. -->
-Cuando llamamos a this desde una función que está contenida en un objeto, this se hace referencia a ese objeto.
-
+Cuando llamamos a this desde una función que está contenida en un objeto, this
+se hace referencia a ese objeto.
 
 <!-- clase 10 
 Prototype
@@ -49,3 +50,21 @@ Todos los objetos “heredan” de un prototipo que a su vez hereda de otro prot
 
 La keyword new crea un nuevo objeto que “hereda” todas las propiedades del prototype de otro objeto. No confundir prototype con proto que es sólo una propiedad en cada instancía que apunta al prototipo del que hereda.
  -->
+
+<!-- 
+ Clase 11 Herencia Prototipal
+Por default los objetos en JavaScript tienen cómo prototipo a Object que es el punto de partida de todos los objetos, es el prototipo padre. Object es la raíz de todo, por lo tanto tiene un prototipo padre undefined.
+
+Cuando se llama a una función o variable que no se encuentra en el mismo objeto que la llamó, se busca en toda la prototype chain hasta encontrarla o regresar undefined.
+
+La función hasOwnProperty sirve para verificar si una propiedad es parte del objeto o si viene heredada desde su prototype chain. -->
+
+<!-- Parsers y el Abstract Syntax Tree
+El JS Engine recibe el código fuente y lo procesa de la siguiente manera:
+
+El parser descompone y crea tokens que integran el AST.
+Se compila a bytecode y se ejecuta.
+Lo que se pueda se optimiza a machine code y se reemplaza el código base.
+Un SyntaxError es lanzado cuando el motor JavaScript encuentra partes que no forman parte de la sintaxis del lenguaje y esto lo logra gracias a que se tiene un AST generado por el parser.
+
+El parser es del 15% al 20% del proceso de ejecución por lo que hay que usar parser del código justo en el momento que lo necesitamos y no antes de saber si se va a usar o no. -->
