@@ -29,13 +29,23 @@ Cuando se denota un script de tipo module con el atributo type="module las varia
 
 Los closures nos sirven para tener algo parecido a variables privadas, característica que no tiene JavaScript por default. Es decir encapsulan variables que no pueden ser modificadas directamente por otros objetos, sólo por funciones pertenecientes al mismo. -->
 
+No se puede asignar un valor a this directamente y este depende de en que scope nos encontramos:
 <!-- Clase 8
 
-this
 this se refiere a un objeto, ese objeto es el que actualmente está ejecutando un pedazo de código.
+this
 
-No se puede asignar un valor a this directamente y este depende de en que scope nos encontramos:
 
 Cuando llamamos a this en el Global Scope o Function Scope, se hace referencia al objeto window. A excepción de cuando estamos en strict mode que nos regresará undefined.
-Cuando llamamos a this desde una función que está contenida en un objeto, this se hace referencia a ese objeto.
 Cuando llamamos a this desde una “clase”, se hace referencia a la instancia generada por el constructor. -->
+Cuando llamamos a this desde una función que está contenida en un objeto, this se hace referencia a ese objeto.
+
+
+<!-- clase 10 
+Prototype
+En Javascript todo son objetos, no tenemos clases, no tenemos ese plano para crear objetos.
+
+Todos los objetos “heredan” de un prototipo que a su vez hereda de otro prototipo y así sucesivamente creando lo que se llama la prototype chain.
+
+La keyword new crea un nuevo objeto que “hereda” todas las propiedades del prototype de otro objeto. No confundir prototype con proto que es sólo una propiedad en cada instancía que apunta al prototipo del que hereda.
+ -->
