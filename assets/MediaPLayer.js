@@ -10,13 +10,13 @@ MediaPlayer.prototype._initPlugins = function() {
     play: () => this.play(),
     pause: () => this.pause(),
     media: this.media,
-    get muted(){
+    get muted() {
       return this.media.muted;
     },
-    set muted(value){
+    set muted(value) {
       this.media.muted = value;
     }
-  }
+  };
 
   this.plugins.forEach(plugin => {
     plugin.run(this);
