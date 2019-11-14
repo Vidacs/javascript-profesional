@@ -118,13 +118,41 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"exercises/typescript/index.ts":[function(require,module,exports) {
-console.log("HOli, typescript");
+var muted;
+muted = false;
+var age = 6;
+var numerador = 24;
+var denominador = age;
+var resultado = numerador / denominador;
+var nombre = "Vidacs";
+var saludo = "Hola, me llamo " + nombre; // Arrays
 
-function add(a, b) {
-  return a + b;
-}
+var people = [];
+people = ["isable", "nicole", "raul"];
+var peopleAndNumbers = [];
+peopleAndNumbers.push("Vidacs"); //enum
 
-add(1, 2);
+var Color;
+
+(function (Color) {
+  Color["Rojo"] = "Rojo";
+  Color["Verde"] = "Verde";
+  Color["Azul"] = "Azul";
+  Color["Amarillo"] = "Amarillo";
+  Color["Violeta"] = "Violeta";
+})(Color || (Color = {}));
+
+var colorFavorite = Color.Rojo;
+console.log("Mi color favorito es " + colorFavorite); //Any
+
+var comodin = "Joker";
+comodin = {
+  type: "Wildcard"
+}; //object
+
+var someObject = {
+  type: "Wildcard"
+};
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
