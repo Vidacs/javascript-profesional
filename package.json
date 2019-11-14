@@ -4,7 +4,7 @@
   "description": "Curso de js De platzi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html exercices/index.html exercises/**/*.html"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,12 @@
     "url": "https://github.com/Vidacs/javascript-profesional/issues"
   },
   "homepage": "https://github.com/Vidacs/javascript-profesional#readme",
-  "scripts": {
-    "start": "live-server"
-  },
   "devDependencies": {
-    "live-server": "^1.2.1"
-  }
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.7.2"
+  },
+  "browserlist": [
+    "last 1 Chrome version"
+  ]
 }
