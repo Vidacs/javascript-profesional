@@ -118,26 +118,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"exercises/typescript/index.ts":[function(require,module,exports) {
-function add(a, b) {
-  return a + b;
+var Color;
+
+(function (Color) {
+  Color["Rojo"] = "Rojo";
+  Color["Verde"] = "Verda";
+})(Color || (Color = {}));
+
+var Rectangulo = {
+  ancho: 4,
+  alto: 6
+};
+var rect = {
+  ancho: 5,
+  alto: 5,
+  color: Color.Rojo
+};
+
+function area(r) {
+  return r.alto * r.ancho;
 }
 
-var sum = add(4, 3);
+var areaReact = area(rect);
+console.log(areaReact);
 
-function createAdder(a) {
-  return function (b) {
-    return b + a;
-  };
-}
+rect.toString = function () {
+  return this.color ? "Un rectangulo " + this.color : "Un rectangulo";
+};
 
-var addFour = createAdder(4);
-var fourPlus6 = addFour(6);
-
-function fullName(firstName, lastName) {
-  return firstName + " " + lastName;
-}
-
-var vidacs = fullName("Vidacs");
+console.log(rect.toString());
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -166,7 +175,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35619" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34881" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
